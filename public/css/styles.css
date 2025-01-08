@@ -1,0 +1,389 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url("/img/fundo.webp") no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.mainContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff00;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #02B398;
+    margin-bottom: 30px;
+    height: 80%;
+    margin: 5px;
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+/* Grid container */
+.content1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.content2 {
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+.content3 {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Seções */
+.basic-info-section {
+    
+    margin: 5px;
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+    
+}
+
+.health-section {
+    
+    margin: 5px;
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+    
+}
+
+.energy-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.defense-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.equipment-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.attributes-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.knowledge-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.inventory-section{
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.notes-section {
+    
+    margin: 5px;
+     background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
+.button-section{
+    
+    margin: 5px;
+    padding: 20px;
+}
+
+.health-section h2 {
+    color: #df1e1e;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #3B2849;
+    padding-bottom: 8px;
+}
+.health-section label{
+    color: #df0303;
+}
+.energy-section h2 {
+    color: #6695f8da;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #3B2849;
+    padding-bottom: 8px;
+}
+.energy-section label{
+    color: #6695f8da;
+}
+
+.equipment{
+    display: flex;
+        align-items: center;
+        flex-direction: column;
+}
+.damage{
+    font-size: 20px;
+    display: flex;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3B2849;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.propArmamento{
+    display: flex;
+}
+h2 {
+    color: #02F6D0;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #3B2849;
+    padding-bottom: 8px;
+}
+h3 {
+    color: #02F6D0;
+    margin-top: 0;
+    font-size: 10px;
+    text-align: center;
+    
+    
+}
+.attributes{
+    display: flex;
+    justify-content: center;
+}
+
+
+.linha {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.coluna {
+    flex-direction: column;
+    padding: 10px;
+}
+/* Campos individuais */
+.campo {
+    flex: 1;
+    
+}
+.selects{
+    display: flex;
+    justify-content: center;
+}
+/* Labels */
+label {
+    font-size: large;
+    display: flex;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #02F6D0;
+    justify-content: center;
+}
+
+/* Inputs e selects */
+input[type="text"],
+textarea,
+select {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #3B2849;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+p{
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #3B2849;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff; 
+}
+a{
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #3B2849;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff; 
+}
+/* Estilo para hover em inputs e selects */
+input[type="text"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #3498db;
+}
+
+/* Estilo para focus em inputs e selects */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #2980b9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Botão de submit */
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.close-button{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #272e27;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Área de anotações */
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+td{
+    vertical-align: bottom
+}
+
+table{
+    width: 100%;
+
+}
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .mainContainer {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .campo {
+        min-width: 100%;
+    }
+
+    .section {
+        margin: 10px 0;
+    }
+}
+/* Estilo do modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #351c344b;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+  }
+  .modal-content p{
+    color: #04c4a7;
+    font-size: 25px;
+    background: #351c34cc;
+  }
+  .close {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  

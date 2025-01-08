@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem - Gaia</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <h1>Ficha de Personagem - Gaia: O Prelúdio</h1>
+        <!-- content1 Seção de informações básicas, vida, energia e defesa -->
+        <div class="content1">
+            <div class="basic-info-section">
+                <div class="coluna">
+                    <h2>informações</h2>
+                    <div style="display: grid;grid-template-columns: repeat(2, 1fr);">
+                        <div class="coluna">
+                            <div class="campo">
+                                <label for="jogador">Jogador</label>
+                                <input type="text" id="jogador" name="jogador">
+                            </div>
+                            <div class="campo">
+                                <label for="personagem">Personagem</label>
+                                <input type="text" id="personagem" name="personagem">
+                            </div>
+                        </div>
+                        <div class="coluna">
+                            <div class="campo">
+                                <label for="legado">Legado</label>
+                                <select id="legado" name="legado">
+                                    <option value="legado1">Legado 1</option>
+                                    <option value="legado2">Legado 2</option>
+                                    <option value="legado3">Legado 3</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="nivel">Nível</label>
+                                <input type="text" id="nivel" name="nivel">
+                            </div>
+                        </div>
+                        
+                    </div>
+            
+                </div>
+            </div>
+                <div class="health-section">
+                    <div class="coluna" style="color: #8B0000;">
+                        <h2>Vida</h2>
+                        <div style="display: flex;">
+                            <div class="coluna">
+                                <div class="campo">
+                                    <label for="pv">Atual</label>
+                                    <input type="text" id="pv" name="pv">
+                                </div>
+                                <div class="campo">
+                                    <label for="pv_max">Máxima</label>
+                                    <input type="text" id="pv_max" name="pv_max">
+                                </div>
+                                <div class="campo">
+                                    <label for="pv">Temporária</label>
+                                    <input type="text" id="pv_tp" name="pv_tp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="energy-section">
+                    <div class="coluna">
+                        <h2>Energia</h2>
+                        <div style="display: flex;">
+                            <div class="coluna">
+                                <div class="campo">
+                                    <label for="pe">Atual</label>
+                                    <input type="text" id="pe" name="pe">
+                                </div>
+                                <div class="campo">
+                                    <label for="pe_max">Máximo</label>
+                                    <input type="text" id="pe_max" name="pe_max">
+                                </div>
+                                    <div class="campo">
+                                        <label for="exaustao">Exaustão</label>
+                                        <div class="selects">
+                                            <select id="exaustao" name="exaustao"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                <div class="defense-section">
+                    <div class="coluna">
+                        <h2>Defesa</h2>
+                        <div class="coluna">
+                            <div class="campo">
+                                <label for="desvio">Desvio</label>
+                                <input type="text" id="desvio" name="desvio">
+                            </div>
+                            <div class="campo">
+                                <label for="bloqueio">Bloqueio</label>
+                                <input type="text" id="bloqueio" name="bloqueio">
+                            </div>
+                            <div class="campo">
+                                <label for="velocidade">Velocidade</label>
+                                <input type="text" id="velocidade" name="velocidade">
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        <div class="content2"> 
+            <!-- Seção de Equipamentos -->
+            <div class="equipment-section">
+                <div class="coluna">
+                    <div class="equipment">
+                        <table id="equipment">
+                            <thead>
+                                <tr>
+                                    <th><h2>Equipamentos</h2></th>
+                                    <th><h2>Dano</h2></th>
+                                    <th><h2>Propriedades</h2></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="line_1">
+                                    <td id="line_1_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="armamento1">Armamento 1</label>
+                                                <select id="armamento1" name="armamento1">
+                                                    <% armamentos.forEach((categorias, index) => { %>
+                                                        <optgroup id= <%= 'categoria' + index%> label="<%= categorias.categoria %>"> 
+                                                            <% categorias.armamentos.forEach(armamento => { %>
+                                                        <option value="<%= armamento.id %>"><%= armamento.nome %></option>
+                                                        <% }); %>
+                                                    <% }); %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td> 
+                                    <td id="line_1_col_2"style="display: flex;">
+                                        <div id="damagebase1" class="damage1">
+                                            
+                                        </div>
+                                        <div id="damage1" class="damage1">
+                                            
+
+                                        </div>
+                                    </td> 
+                                    <td id="line_1_col_3">
+                                        <div id="propArmamento1" class="propArmamento">
+                                            
+                                            
+                                        </div>
+                                    </td> 
+                                </tr>
+                                <tr id="line_2">
+                                    <td id="line_2_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="armamento2"></label>
+                                                <select id="armamento2" name="armamento2">
+                                                    <% armamentos.forEach((categorias, index) => { %>
+                                                        <optgroup id= <%= 'categoria' + index%> label="<%= categorias.categoria %>"> 
+                                                            <% categorias.armamentos.forEach(armamento => { %>
+                                                        <option value="<%= armamento.id  %>"><%= armamento.nome %></option>
+                                                        <% }); %>
+                                                    <% }); %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td> 
+                                    <td id="line_2_col_2"style="display: flex;">
+                                        <div id="damagebase2" class="damage2">
+                                            
+                                        </div>
+                                        <div id="damage2" class="damage2">
+                                            
+
+                                        </div>
+                                    </td> 
+                                    <td id="line_2_col_3">
+                                        <div id="propArmamento2" class="propArmamento">
+                                            
+                                        </div>
+                                    </td> 
+                                </tr>
+                                <tr id="line_3">
+                                    <td id="line_3_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="armadura">Armadura</label>
+                                                <select id="armadura" name="armadura">
+                                                    <option value="0">Nenhuma</option>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>  
+                                </tr>
+                                <tr id="line_4">
+                                    <td id="line_4_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="escudo">Escudo</label>
+                                                <select id="escudo" name="escudo">
+                                                    <option value="0">Nenhum</option>
+                                                    <option value="1">Sim</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>  
+                                </tr>
+                                <tr id="line_5">
+                                    <td id="line_5_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="extra">extra</label>
+                                                <select id="extra" name="extra">
+                                                    <option value="Nenhum">Nenhum</option>
+                                                    <option value="Bolsa">Bolsa</option>
+                                                    <option value="Mochila">Mochila</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>  
+                                </tr>
+                                <tr id="line_6">
+                                    <td id="line_6_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="bainha_coldre1">Bainha/Coldre</label>
+                                                <select id="bainha_coldre1" name="bainha_coldre1">
+                                                    <option value="1">sim</option>
+                                                    <option value="0">nao</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="line_6_col_2">
+                                    </td> 
+                                    <td id="line_6_col_3">
+                                        <div class="equipment">
+                                            <div class="equipment">
+                                                <div class="campo">
+                                                    <label for="armamento_coldre1">Armamento</label>
+                                                    <select id="armamento_coldre1" name="armamento_coldre1">
+                                                        <option value="espada">Espada</option>
+                                                        <option value="arco">Arco</option>
+                                                        <option value="machado">Machado</option>
+                                                        <option value="lanca">Lança</option>
+                                                        <option value="clava">Clava</option>
+                                                        <option value="adaga">Adaga</option>
+                                                        <option value="outro">Outro</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </td>
+                                </tr>
+                                <tr id="line_7">
+                                    <td id="line_7_col_1">
+                                        <div class="equipment">
+                                            <div class="campo">
+                                                <label for="bainha_coldre2">Bainha/Coldre</label>
+                                                <select id="bainha_coldre2" name="bainha_coldre2">
+                                                    <option value="1">sim</option>
+                                                    <option value="0">nao</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="line_7_col_2">
+                                    </td> 
+                                    <td id="line_7_col_3">
+                                        <div class="equipment">
+                                            <div class="equipment">
+                                                <div class="campo">
+                                                    <label for="armamento_coldre2">Armamento</label>
+                                                    <select id="armamento_coldre2" name="armamento_coldre2">
+                                                        <option value="espada">Espada</option>
+                                                        <option value="arco">Arco</option>
+                                                        <option value="machado">Machado</option>
+                                                        <option value="lanca">Lança</option>
+                                                        <option value="clava">Clava</option>
+                                                        <option value="adaga">Adaga</option>
+                                                        <option value="outro">Outro</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+            </div>
+            <div class="attributes-section">
+                <h2>Atributos</h2>
+                <div class="attributes">
+                    <div class="selects">
+                        <div class="coluna">
+                            <div class="campo">
+                                <label for="precisao">Precisão</label>
+                                <select id="precisao" name="precisao"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="brutalidade">Brutalidade</label>
+                                <select id="brutalidade" name="brutalidade"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="destreza">Destreza</label>
+                                <select id="destreza" name="destreza"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="agilidade">Agilidade</label>
+                                <select id="agilidade" name="agilidade"></select>
+                            </div>
+                        </div>
+                        <div class="coluna">
+                            <div class="campo">
+                                <label for="canalizacao">Canalização</label>
+                                <select id="canalizacao" name="canalizacao"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="arcanismo">Arcanismo</label>
+                                <select id="arcanismo" name="arcanismo"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="vigor">Vigor</label>
+                                <select id="vigor" name="vigor"></select>
+                            </div>
+                            <div class="campo">
+                                <label for="espirito">Espírito</label>
+                                <select id="espirito" name="espirito"></select>
+                            </div>
+                        </div>
+                    </div>        
+                    
+                </div>
+                
+            </div>         
+
+            <div class="knowledge-section">
+                <h2>Conhecimentos</h2>
+                <div class="selects">
+                    <div class="coluna">
+                        <div class="campo">
+                            <label for="carisma">Carisma</label>
+                            <select id="carisma" name="carisma"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="intuicao">Intuição</label>
+                            <select id="intuicao" name="intuicao"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="medicina">Medicina</label>
+                            <select id="medicina" name="medicina"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="con_mistico">Con. Místico</label>
+                            <select id="con_mistico" name="con_mistico"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="percepcao">Percepção</label>
+                            <select id="percepcao" name="percepcao"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="exploracao">Exploração</label>
+                            <select id="exploracao" name="exploracao"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="performance">Performance</label>
+                            <select id="performance" name="performance"></select>
+                        </div>
+                    </div>
+                    <div class="coluna">
+                        <div class="campo">
+                            <label for="furtividade">Furtividade</label>
+                            <select id="furtividade" name="furtividade"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="religiao">Religião</label>
+                            <select id="religiao" name="religiao"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="historia">História</label>
+                            <select id="historia" name="historia"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="sobrevivencia">Sobrevivência</label>
+                            <select id="sobrevivencia" name="sobrevivencia"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="intimidacao">Intimidação</label>
+                            <select id="intimidacao" name="intimidacao"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="tecnologia">Tecnologia</label>
+                            <select id="tecnologia" name="tecnologia"></select>
+                        </div>
+                        <div class="campo">
+                            <label for="vontade">Vontade</label>
+                            <select id="vontade" name="vontade"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content 3: Propriedades -->
+        <div class="content3">
+            <div class="inventory-section">
+                <h2>Inventário</h2>
+                <div style="display: grid; grid-template-columns: repeat(3,1fr);">
+                    <div class="campo">
+                        <label for="pe">Ouro</label>
+                        <input type="text" id="ouro" name="ouro">
+                    </div>
+                    <div class="campo">
+                        <label for="pe">Prata</label>
+                        <input type="text" id="prata" name="prata">
+                    </div>
+                    <div class="campo">
+                        <label for="pe">Bronze</label>
+                        <input type="text" id="bronze" name="bronze">
+                    </div>
+                </div>
+                <button>Comprar item</button>
+                <button>Adicionar kit inicial</button>
+                <table>
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- Seção de Anotações -->
+            <div class="notes-section">
+                <div class="coluna">
+                    <h2>Anotações</h2>
+                    <label for="anotacoes">Anotações</label>
+                    <textarea id="anotacoes" name="anotacoes"></textarea>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="button-section">
+            <button type="submit" class="submit-btn">Salvar</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
