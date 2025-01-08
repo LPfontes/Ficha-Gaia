@@ -1,2 +1,25 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Ignorar node_modules
+node_modules/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar logs
+*.log
+
+# Ignorar arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos gerados por pacotes (como npm ou yarn)
+package-lock.json
+yarn.lock
+
+# Ignorar pastas de build ou dist (se houver)
+build/
+dist/
+
+# Ignorar arquivos de seeds temporários (se aplicável)
+seeds/*.tmp
