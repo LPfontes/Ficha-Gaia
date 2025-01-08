@@ -33,3 +33,4 @@ seeds.js
 # Ignorar arquivos de cache
 .cache/
 tmp/
+.vercel
