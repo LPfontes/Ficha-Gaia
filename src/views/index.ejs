@@ -14,7 +14,7 @@
             <div class="basic-info-section">
                 <div class="coluna">
                     <h2>informações</h2>
-                    <div style="display: grid;grid-template-columns: repeat(2, 1fr);">
+                    <div class="coluna-info">
                         <div class="coluna">
                             <div class="campo">
                                 <label for="jogador">Jogador</label>
@@ -45,9 +45,9 @@
                 </div>
             </div>
                 <div class="health-section">
-                    <div class="coluna" style="color: #8B0000;">
+                    <div class="coluna">
                         <h2>Vida</h2>
-                        <div style="display: flex;">
+                        <div class="coluna-health">
                             <div class="coluna">
                                 <div class="campo">
                                     <label for="pv">Atual</label>
@@ -68,7 +68,7 @@
                 <div class="energy-section">
                     <div class="coluna">
                         <h2>Energia</h2>
-                        <div style="display: flex;">
+                        <div class="coluna-energy">
                             <div class="coluna">
                                 <div class="campo">
                                     <label for="pe">Atual</label>
@@ -92,17 +92,21 @@
                     <div class="coluna">
                         <h2>Defesa</h2>
                         <div class="coluna">
-                            <div class="campo">
-                                <label for="desvio">Desvio</label>
-                                <input type="text" id="desvio" name="desvio">
-                            </div>
-                            <div class="campo">
-                                <label for="bloqueio">Bloqueio</label>
-                                <input type="text" id="bloqueio" name="bloqueio">
-                            </div>
-                            <div class="campo">
-                                <label for="velocidade">Velocidade</label>
-                                <input type="text" id="velocidade" name="velocidade">
+                            <div class="coluna-defense">
+                                <div class="coluna">
+                                    <div class="campo">
+                                        <label for="desvio">Desvio</label>
+                                        <input type="text" id="desvio" name="desvio">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="bloqueio">Bloqueio</label>
+                                        <input type="text" id="bloqueio" name="bloqueio">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="velocidade">Velocidade</label>
+                                        <input type="text" id="velocidade" name="velocidade">
+                                    </div>
+                                </div>
                             </div>
                         </div> 
                     </div>

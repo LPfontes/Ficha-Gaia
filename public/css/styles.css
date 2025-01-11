@@ -14,7 +14,7 @@ body {
 /* Container principal */
 .mainContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
     background: #ffffff00;
@@ -62,7 +62,9 @@ h1 {
     box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
     
 }
-
+.coluna-info{
+    display: grid;grid-template-columns: repeat(2, 1fr);
+}
 .health-section {
     
     margin: 5px;
@@ -154,6 +156,10 @@ h1 {
 .health-section label{
     color: #df0303;
 }
+.coluna-health{
+    display: flex;
+    justify-content: center;
+}
 .energy-section h2 {
     color: #6695f8da;
     margin-top: 0;
@@ -162,10 +168,17 @@ h1 {
     border-bottom: 1px solid #3B2849;
     padding-bottom: 8px;
 }
+.coluna-energy{
+    display: flex;
+    justify-content: center;
+}
 .energy-section label{
     color: #6695f8da;
 }
-
+.coluna-defense{
+    display: flex;
+    justify-content: center;
+}
 .equipment{
     display: flex;
         align-items: center;
@@ -267,7 +280,7 @@ a{
     padding: 10px;
     margin-bottom: 5px;
     border: 1px solid #3B2849;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
     background-color: #fff; 
 }
@@ -330,16 +343,26 @@ table{
 
 }
 /* Responsividade */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1440px) {
+    body{
+        background: none;
+        background-color: #422C49; 
+    }
     .container {
         grid-template-columns: 1fr;
     }
-
+    .propArmamento{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     .mainContainer {
         margin: 10px;
         padding: 10px;
     }
-
+    .coluna-info{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     .campo {
         min-width: 100%;
     }
@@ -347,6 +370,21 @@ table{
     .section {
         margin: 10px 0;
     }
+    .content1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .content2 {
+        
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .content3 {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
 /* Estilo do modal */
 .modal {

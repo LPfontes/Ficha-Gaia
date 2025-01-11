@@ -103,9 +103,9 @@ document.querySelectorAll('select[id^="armamento"]').forEach((selectElement,inde
                 // Limpa as propriedades anteriores
                 propArmamento.innerHTML = '';
                 // Adiciona as novas propriedades
-                propriedades.forEach(propriedade => {
+                propriedades.forEach((propriedade) => {
                     propArmamento.innerHTML += `<a href="#" data-propriedade-id="${propriedade}" class="prop-link">${propriedade}</a>`;
-                    
+                    descricao(propriedade);
                 });
                 processarArmamento(armamento, index);
             });
@@ -127,12 +127,13 @@ document.querySelectorAll('select[id^="armamento"]').forEach((selectElement,inde
         }
     });
 });
-document.querySelectorAll('.propArmamento').forEach(propArmamento => {
+document.querySelectorAll('.propArmamento').forEach((propArmamento) => {
     propArmamento.addEventListener('click', function(event) {
         // Verifica se o alvo do evento é um link com a classe 'prop-link'
         if (event.target && event.target.classList.contains('prop-link')) {
             const propriedadeId = event.target.getAttribute('data-propriedade-id');
-            descricao(propriedadeId); // Chama a função que exibe a descrição da propriedade
+            var modal = document.getElementById(`modal${propriedadeId}`);
+            modal.style.display = "block";
         }
     });
 });
@@ -178,43 +179,47 @@ document.getElementById('arcanismo').addEventListener('change', function () {
     gerenciarMudanca('arcanismo', null);
 });
 function descricao(propriedadeId) {
-    // Faz uma requisição para obter os dados da propriedade
-    fetch(`/propriedade/${propriedadeId}`)
-      .then(response => response.json())
-      .then(propriedade => {
-        // Cria o modal dinamicamente
-        const modal = document.createElement("div");
+    // Verifica se o modal já existe
+    let modal = document.getElementById(`modal${propriedadeId}`);
+    
+    // Se o modal não existir, cria um novo
+    if (!modal) {
+        modal = document.createElement("div");
         modal.className = "modal";
-  
-        modal.innerHTML = `
-          <div class="modal-content">
-            <h1>${propriedade.nome}</h1>
-            <p>${propriedade.descricao}</p>
-            <button class="close-button">Fechar</button>
-          </div>
-        `;
-  
-        // Adiciona o modal ao corpo da página
-        document.body.appendChild(modal);
-  
-        // Exibe o modal
-        modal.style.display = "block";
-  
-        const closeButtons = modal.querySelectorAll(".close, .close-button");
-        closeButtons.forEach(button => {
-          button.addEventListener("click", () => {
-            modal.remove(); // Remove o modal do DOM
-          });
+        modal.id = `modal${propriedadeId}`;
+        // Faz uma requisição para obter os dados da propriedade
+    fetch(`/propriedade/${propriedadeId}`)
+    .then(response => response.json())
+    .then(propriedade => {
+      // Cria o modal dinamicamente
+      modal.innerHTML = `
+        <div class="modal-content">
+          <h1>${propriedade.nome}</h1>
+          <p>${propriedade.descricao}</p>
+          <button class="close-button">Fechar</button>
+        </div>
+      `;
+      // Adiciona o modal ao corpo da página
+      document.body.appendChild(modal);
+
+
+      const closeButtons = modal.querySelectorAll(".close, .close-button");
+      closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          modal.style.display = "none"; 
         });
-  
-        // Fecha o modal ao clicar fora do conteúdo
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            modal.remove();
-          }
-        });
-      })
-      .catch(error => {
-        console.error("Erro ao carregar a propriedade:", error);
       });
+
+      // Fecha o modal ao clicar fora do conteúdo
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none"; 
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao carregar a propriedade:", error);
+    });
+    }
+    
   }

@@ -3,10 +3,7 @@ const Propriedade = require('../models/Propriedade'); // Caminho para o modelo b
 
 async function getPropiedade (req, res) {
   try {
-    console.log(req.params.nome)
     propriedade = await Propriedade.find({ nome: req.params.nome });
-    console.log(propriedade[0].descricao)
-    console.log(propriedade[0].nome)
     if (propriedade[0]) {
       res.status(200).json(propriedade[0]);
     } else {
