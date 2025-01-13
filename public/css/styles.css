@@ -14,7 +14,7 @@ body {
 /* Container principal */
 .mainContainer {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1380px;
     margin: 0 auto;
     padding: 20px;
     background: #ffffff00;
@@ -38,107 +38,37 @@ h1 {
 /* Grid container */
 .content1 {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr) 2fr;
 }
-.content2 {
-    
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+.content1-coluna1, .content1-coluna2, .content1-coluna3, .content1-coluna4{
+    background-color: #000000ab;
+    margin: 5px;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
 }
-.content3 {
+
+.content2,.content3 {
     
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-/* Seções */
-.basic-info-section {
-    
-    margin: 5px;
-    background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-    
-}
 .coluna-info{
-    display: grid;grid-template-columns: repeat(2, 1fr);
-}
-.health-section {
-    
-    margin: 5px;
-    background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-    
+    display: grid; grid-template-columns: 1fr;
 }
 
-.energy-section{
+.equipment-section,.inventory-section{
     
     margin: 5px;
-     background-color: #000000ab;
+    background-color: #000000ab;
     border: 2px solid #3B2849;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
 }
-.defense-section{
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
-.equipment-section{
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
-.attributes-section{
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
-.knowledge-section{
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
-.inventory-section{
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
-.notes-section {
-    
-    margin: 5px;
-     background-color: #000000ab;
-    border: 2px solid #3B2849;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
-}
+
 .button-section{
     
     margin: 5px;
@@ -156,9 +86,16 @@ h1 {
 .health-section label{
     color: #df0303;
 }
-.coluna-health{
-    display: flex;
+.coluna-health,.coluna-energy{
+    display: grid;
     justify-content: center;
+    
+}
+.health-atual,.energy-atual{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
 }
 .energy-section h2 {
     color: #6695f8da;
@@ -168,21 +105,22 @@ h1 {
     border-bottom: 1px solid #3B2849;
     padding-bottom: 8px;
 }
-.coluna-energy{
-    display: flex;
-    justify-content: center;
-}
+
+
 .energy-section label{
     color: #6695f8da;
 }
 .coluna-defense{
-    display: flex;
+    gap: 10px;
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(3,1fr)
+   
 }
 .equipment{
     display: flex;
-        align-items: center;
-        flex-direction: column;
+    align-items: center;
+    flex-direction: column;
 }
 .damage{
     font-size: 20px;
@@ -214,27 +152,46 @@ h3 {
     
     
 }
-.attributes{
-    display: flex;
-    justify-content: center;
+
+.habilidades-section{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin: 5px;
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
 }
-
-
+.habilidades-legado{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 5px;
+}
+.habilidade-legado-1 ,.habilidade-legado-2 ,.habilidade-legado-3 {
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+   
+}
 .linha {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
 }
 .coluna {
-    flex-direction: column;
-    padding: 10px;
+    padding: 5px;
 }
 /* Campos individuais */
-.campo {
-    flex: 1;
-    
+.campo-atributo {
+    width: 110px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
-.selects{
+.selects,.attributes{
     display: flex;
     justify-content: center;
 }
@@ -247,11 +204,18 @@ label {
     color: #02F6D0;
     justify-content: center;
 }
-
+.habilidade{
+    margin: 5px;
+    background-color: #000000ab;
+    border: 2px solid #3B2849;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 4px rgb(86 161 239 / 10%);
+}
 /* Inputs e selects */
 input[type="text"],
 textarea,
-select {
+select,span {
     text-align: center;
     font-size: 18px;
     width: 100%;
@@ -262,16 +226,14 @@ select {
     box-sizing: border-box;
     background-color: #fff;
 }
+span{
+    margin-left: 5px;
+}
 p{
     text-align: center;
     font-size: 18px;
-    width: 100%;
     padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #3B2849;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #fff; 
+    color: #fff;
 }
 a{
     text-align: center;
@@ -370,20 +332,11 @@ table{
     .section {
         margin: 10px 0;
     }
-    .content1 {
+    .content1 ,.content2,.content3{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr ;
     }
-    .content2 {
-        
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .content3 {
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+    
 
 }
 /* Estilo do modal */

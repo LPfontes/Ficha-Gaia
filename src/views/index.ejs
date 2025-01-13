@@ -11,107 +11,261 @@
         <h1>Ficha de Personagem - Gaia: O Prelúdio</h1>
         <!-- content1 Seção de informações básicas, vida, energia e defesa -->
         <div class="content1">
-            <div class="basic-info-section">
-                <div class="coluna">
-                    <h2>informações</h2>
-                    <div class="coluna-info">
-                        <div class="coluna">
-                            <div class="campo">
-                                <label for="jogador">Jogador</label>
-                                <input type="text" id="jogador" name="jogador">
+            <div class="content1-coluna1">
+                <div class="basic-info-section">
+                    <div class="coluna">
+                        <h2>informações</h2>
+                        <div class="coluna-info">
+                            <div class="coluna">
+                                <div class="campo">
+                                    <label for="jogador">Jogador</label>
+                                    <input type="text" id="jogador" name="jogador">
+                                </div>
+                                <div class="campo">
+                                    <label for="personagem">Personagem</label>
+                                    <input type="text" id="personagem" name="personagem">
+                                </div>
+                                <div class="campo">
+                                    <label for="legado">Legado</label>
+                                    <select id="legado" name="legado">
+                                        
+                                    </select>
+                                </div>
+                                <div class="campo">
+                                    <label for="nivel">Nível</label>
+                                    <input type="text" id="nivel" name="nivel">
+                                </div>
                             </div>
-                            <div class="campo">
-                                <label for="personagem">Personagem</label>
-                                <input type="text" id="personagem" name="personagem">
-                            </div>
+                            
                         </div>
-                        <div class="coluna">
-                            <div class="campo">
-                                <label for="legado">Legado</label>
-                                <select id="legado" name="legado">
-                                    <option value="legado1">Legado 1</option>
-                                    <option value="legado2">Legado 2</option>
-                                    <option value="legado3">Legado 3</option>
-                                </select>
-                            </div>
-                            <div class="campo">
-                                <label for="nivel">Nível</label>
-                                <input type="text" id="nivel" name="nivel">
-                            </div>
-                        </div>
-                        
+                
                     </div>
-            
                 </div>
             </div>
-                <div class="health-section">
-                    <div class="coluna">
-                        <h2>Vida</h2>
-                        <div class="coluna-health">
+            <div class="content1-coluna2">
+                <div style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <div class="health-section">
                             <div class="coluna">
-                                <div class="campo">
-                                    <label for="pv">Atual</label>
-                                    <input type="text" id="pv" name="pv">
-                                </div>
-                                <div class="campo">
-                                    <label for="pv_max">Máxima</label>
-                                    <input type="text" id="pv_max" name="pv_max">
-                                </div>
-                                <div class="campo">
-                                    <label for="pv">Temporária</label>
-                                    <input type="text" id="pv_tp" name="pv_tp">
+                                <h2>Vida</h2>
+                                <div class="coluna-health">
+                                    <div class="health-atual">
+                                        <div class="campo">
+                                            <label for="pv">Atual</label>
+                                            <input type="text" id="pv" name="pv">
+                                        </div>
+                                        <div class="campo">
+                                            <label for="pv_max">Máxima</label>
+                                            <input type="text" id="pv_max" name="pv_max">
+                                        </div>
+                                    </div> 
+                                        <div class="campo">
+                                            <label for="pv">Temporária</label>
+                                            <input type="text" id="pv_tp" name="pv_tp">
+                                        </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
-                </div>
-                <div class="energy-section">
-                    <div class="coluna">
-                        <h2>Energia</h2>
-                        <div class="coluna-energy">
-                            <div class="coluna">
-                                <div class="campo">
-                                    <label for="pe">Atual</label>
-                                    <input type="text" id="pe" name="pe">
-                                </div>
-                                <div class="campo">
-                                    <label for="pe_max">Máximo</label>
-                                    <input type="text" id="pe_max" name="pe_max">
-                                </div>
+                    <div class="energy-section">
+                        <div class="coluna">
+                            <h2>Energia</h2>
+                            <div class="coluna-energy">
+                                <div class="energy-atual">
                                     <div class="campo">
-                                        <label for="exaustao">Exaustão</label>
-                                        <div class="selects">
-                                            <select id="exaustao" name="exaustao"></select>
-                                        </div>
+                                        <label for="pe">Atual</label>
+                                        <input type="text" id="pe" name="pe">
+                                    </div>
+                                    <div class="campo">
+                                        <label for="pe_max">Máximo</label>
+                                        <input type="text" id="pe_max" name="pe_max">
                                     </div>
                                 </div>
+                                <div class="campo">
+                                    <label for="exaustao">Exaustão</label>
+                                    <div class="selects">
+                                        <select id="exaustao" name="exaustao"></select>
+                                    </div>
+                                </div>  
                             </div>
                         </div>  
                     </div>
+                </div>
                 <div class="defense-section">
                     <div class="coluna">
                         <h2>Defesa</h2>
-                        <div class="coluna">
-                            <div class="coluna-defense">
-                                <div class="coluna">
-                                    <div class="campo">
-                                        <label for="desvio">Desvio</label>
-                                        <input type="text" id="desvio" name="desvio">
-                                    </div>
-                                    <div class="campo">
-                                        <label for="bloqueio">Bloqueio</label>
-                                        <input type="text" id="bloqueio" name="bloqueio">
-                                    </div>
-                                    <div class="campo">
-                                        <label for="velocidade">Velocidade</label>
-                                        <input type="text" id="velocidade" name="velocidade">
-                                    </div>
-                                </div>
+                        <div class="coluna-defense">
+                            <div class="campo">
+                                <label for="desvio">Desvio</label>
+                                <input type="text" id="desvio" name="desvio">
                             </div>
-                        </div> 
+                            <div class="campo">
+                                <label for="bloqueio">Bloqueio</label>
+                                <input type="text" id="bloqueio" name="bloqueio">
+                            </div>
+                            <div class="campo">
+                                <label for="velocidade">Velocidade</label>
+                                <input type="text" id="velocidade" name="velocidade">
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+            </div> 
+            <div class="content1-coluna3">
+                <div class="attributes">
+                    <div class="selects">
+                        <div class="coluna">
+                            <label for="precisao">Precisão</label>
+                            <div class="campo-atributo">
+                                <select id="precisao" name="precisao"></select>
+                                <span id="teste-precisao">0</span>
+                            </div>
+                
+                            <label for="brutalidade">Brutalidade</label>
+                            <div class="campo-atributo">
+                                <select id="brutalidade" name="brutalidade"></select>
+                                <span id="teste-brutalidade">0</span>
+                            </div>
+                
+                            <label for="destreza">Destreza</label>
+                            <div class="campo-atributo">
+                                <select id="destreza" name="destreza"></select>
+                                <span id="teste-destreza">0</span>
+                            </div>
+                
+                            <label for="agilidade">Agilidade</label>
+                            <div class="campo-atributo">
+                                <select id="agilidade" name="agilidade"></select>
+                                <span id="teste-agilidade">0</span>
+                            </div>
+                        </div>
+                
+                        <div class="coluna">
+                            <label for="canalizacao">Canalização</label>
+                            <div class="campo-atributo">
+                                <select id="canalizacao" name="canalizacao"></select>
+                                <span id="teste-canalizacao">0</span>
+                            </div>
+                
+                            <label for="arcanismo">Arcanismo</label>
+                            <div class="campo-atributo">
+                                <select id="arcanismo" name="arcanismo"></select>
+                                <span id="teste-arcanismo">0</span>
+                            </div>
+                
+                            <label for="vigor">Vigor</label>
+                            <div class="campo-atributo">
+                                <select id="vigor" name="vigor"></select>
+                                <span id="teste-vigor">0</span>
+                            </div>
+                
+                            <label for="espirito">Espírito</label>
+                            <div class="campo-atributo">
+                                <select id="espirito" name="espirito"></select>
+                                <span id="teste-espirito">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <div class="content1-coluna4">
+                <div class="knowledge-section">
+                    <h2>Conhecimentos</h2>
+                    <div class="selects">
+                        <div class="coluna">
+                            <label for="carisma">Carisma</label>
+                            <div class="campo-atributo">
+                                <select id="carisma" name="carisma"></select>
+                                <span id="teste-carisma">0</span>
+                            </div>
+                
+                            <label for="intimidacao">Intimidação</label>
+                            <div class="campo-atributo">
+                                <select id="intimidacao" name="intimidacao"></select>
+                                <span id="teste-intimidacao">0</span>
+                            </div>
+                
+                            <label for="intuicao">Intuição</label>
+                            <div class="campo-atributo">
+                                <select id="intuicao" name="intuicao"></select>
+                                <span id="teste-intuicao">0</span>
+                            </div>
+                
+                            <label for="performance">Performance</label>
+                            <div class="campo-atributo">
+                                <select id="performance" name="performance"></select>
+                                <span id="teste-performance">0</span>
+                            </div>
+                        </div>
+                
+                        <div class="coluna">
+                            <label for="religiao">Religião</label>
+                            <div class="campo-atributo">
+                                <select id="religiao" name="religiao"></select>
+                                <span id="teste-religiao">0</span>
+                            </div>
+                
+                            <label for="historia">História</label>
+                            <div class="campo-atributo">
+                                <select id="historia" name="historia"></select>
+                                <span id="teste-historia">0</span>
+                            </div>
+                
+                            <label for="tecnologia">Tecnologia</label>
+                            <div class="campo-atributo">
+                                <select id="tecnologia" name="tecnologia"></select>
+                                <span id="teste-tecnologia">0</span>
+                            </div>
+                
+                            <label for="vontade">Vontade</label>
+                            <div class="campo-atributo">
+                                <select id="vontade" name="vontade"></select>
+                                <span id="teste-vontade">0</span>
+                            </div>
+                        </div>
+                
+                        <div class="coluna">
+                            <label for="exploracao">Exploração</label>
+                            <div class="campo-atributo">
+                                <select id="exploracao" name="exploracao"></select>
+                                <span id="teste-exploracao">0</span>
+                            </div>
+                
+                            <label for="furtividade">Furtividade</label>
+                            <div class="campo-atributo">
+                                <select id="furtividade" name="furtividade"></select>
+                                <span id="teste-furtividade">0</span>
+                            </div>
+                
+                            <label for="percepcao">Percepção</label>
+                            <div class="campo-atributo">
+                                <select id="percepcao" name="percepcao"></select>
+                                <span id="teste-percepcao">0</span>
+                            </div>
+                
+                            <label for="sobrevivencia">Sobrevivência</label>
+                            <div class="campo-atributo">
+                                <select id="sobrevivencia" name="sobrevivencia"></select>
+                                <span id="teste-sobrevivencia">0</span>
+                            </div>
+                        </div>
+                
+                        <div class="coluna">
+                            <label for="con_mistico">Místico</label>
+                            <div class="campo-atributo">
+                                <select id="con_mistico" name="con_mistico"></select>
+                                <span id="teste-con_mistico">0</span>
+                            </div>
+                
+                            <label for="medicina">Medicina</label>
+                            <div class="campo-atributo">
+                                <select id="medicina" name="medicina"></select>
+                                <span id="teste-medicina">0</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                 
+            </div>  
+        </div>
         <div class="content2"> 
             <!-- Seção de Equipamentos -->
             <div class="equipment-section">
@@ -300,120 +454,6 @@
                     </div> 
                 </div>
             </div>
-            <div class="attributes-section">
-                <h2>Atributos</h2>
-                <div class="attributes">
-                    <div class="selects">
-                        <div class="coluna">
-                            <div class="campo">
-                                <label for="precisao">Precisão</label>
-                                <select id="precisao" name="precisao"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="brutalidade">Brutalidade</label>
-                                <select id="brutalidade" name="brutalidade"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="destreza">Destreza</label>
-                                <select id="destreza" name="destreza"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="agilidade">Agilidade</label>
-                                <select id="agilidade" name="agilidade"></select>
-                            </div>
-                        </div>
-                        <div class="coluna">
-                            <div class="campo">
-                                <label for="canalizacao">Canalização</label>
-                                <select id="canalizacao" name="canalizacao"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="arcanismo">Arcanismo</label>
-                                <select id="arcanismo" name="arcanismo"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="vigor">Vigor</label>
-                                <select id="vigor" name="vigor"></select>
-                            </div>
-                            <div class="campo">
-                                <label for="espirito">Espírito</label>
-                                <select id="espirito" name="espirito"></select>
-                            </div>
-                        </div>
-                    </div>        
-                    
-                </div>
-                
-            </div>         
-
-            <div class="knowledge-section">
-                <h2>Conhecimentos</h2>
-                <div class="selects">
-                    <div class="coluna">
-                        <div class="campo">
-                            <label for="carisma">Carisma</label>
-                            <select id="carisma" name="carisma"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="intuicao">Intuição</label>
-                            <select id="intuicao" name="intuicao"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="medicina">Medicina</label>
-                            <select id="medicina" name="medicina"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="con_mistico">Con. Místico</label>
-                            <select id="con_mistico" name="con_mistico"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="percepcao">Percepção</label>
-                            <select id="percepcao" name="percepcao"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="exploracao">Exploração</label>
-                            <select id="exploracao" name="exploracao"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="performance">Performance</label>
-                            <select id="performance" name="performance"></select>
-                        </div>
-                    </div>
-                    <div class="coluna">
-                        <div class="campo">
-                            <label for="furtividade">Furtividade</label>
-                            <select id="furtividade" name="furtividade"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="religiao">Religião</label>
-                            <select id="religiao" name="religiao"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="historia">História</label>
-                            <select id="historia" name="historia"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="sobrevivencia">Sobrevivência</label>
-                            <select id="sobrevivencia" name="sobrevivencia"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="intimidacao">Intimidação</label>
-                            <select id="intimidacao" name="intimidacao"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="tecnologia">Tecnologia</label>
-                            <select id="tecnologia" name="tecnologia"></select>
-                        </div>
-                        <div class="campo">
-                            <label for="vontade">Vontade</label>
-                            <select id="vontade" name="vontade"></select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Content 3: Propriedades -->
-        <div class="content3">
             <div class="inventory-section">
                 <h2>Inventário</h2>
                 <div style="display: grid; grid-template-columns: repeat(3,1fr);">
@@ -438,23 +478,38 @@
                         </tr>
                     </thead>
                 </table>
-            </div>
-            <!-- Seção de Anotações -->
-            <div class="notes-section">
-                <div class="coluna">
-                    <h2>Anotações</h2>
-                    <label for="anotacoes">Anotações</label>
-                    <textarea id="anotacoes" name="anotacoes"></textarea>
+            </div>    
+        </div>
+        <!-- Content 3: Propriedades -->
+        <div class="content3">
+            <div class="habilidades-section">
+                <h2>Habilidades de legado</h2>
+                <div id="habilidades-legado" class="habilidades-legado">
+                    <div class="campo">
+                        <label for="habilidade1">Habilidade 1</label>
+                        
+                    </div>
+                    <div class="campo">
+                        <label for="habilidade2">Habilidade 2</label>
+                        
+                    </div>
+                    <div class="campo">
+                        <label for="habilidade3">Habilidade 3</label>
+                        
+                    </div>
                 </div>
-                
+
             </div>
+            
+        </div>
+        <div class="content4">
 
         </div>
-
         <div class="button-section">
             <button type="submit" class="submit-btn">Salvar</button>
         </div>
     </div>
+    <script src="legados.js"></script>
     <script src="atributos.js"></script>
     <script src="armamentos.js"></script>
     

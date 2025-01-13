@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const getModelByCategoria = require('../models/Armamento'); // Caminho para o modelo base
 
-async function getAll (req, res) {
+async function getAllArmamento (req, res) {
     const categorias = [
         "",
         "Armamentos Leves",
@@ -48,4 +48,4 @@ async function getArmamento (req, res) {
         res.status(500).json({ error: 'Erro ao buscar armamento' });
       }
 }
-module.exports = {getArmamento,getAll };
+module.exports = {getArmamento,getAllArmamento };
