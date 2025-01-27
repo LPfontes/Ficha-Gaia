@@ -1,8 +1,10 @@
 // Importa o módulo Express para criação do servidor
 const express = require('express');
-const {getArmamento, getAllArmamento} = require('../controllers/armamentosController')
-const {getLegado, getAllLegado} = require('../controllers/legadosController')
-const getPropiredade = require('../controllers/propriedadesController')
+const {getArmamento, getAllArmamento} = require('../controllers/armamentosController');
+const {getLegado, getAllLegado} = require('../controllers/legadosController');
+const getPropiredade = require('../controllers/propriedadesController');
+const {getHabilidadesCaminho, getHabilidade} = require('../controllers/habilidadesController');
+const getTecnicas = require('../controllers/tecnicasController');
 // Função para configurar as rotas da aplicação
 const routes = (app) => {
     // Habilita o parsing de JSON no express
@@ -15,6 +17,10 @@ const routes = (app) => {
     app.get('/propriedade/:nome', getPropiredade);
     app.get('/legados', getAllLegado);
     app.get('/legado/:nome', getLegado);
+    app.get('/habilidades/:caminho/:id', getHabilidade);
+    app.get('/habilidades/:caminho', getHabilidadesCaminho);
+    app.get('/tecnicas/:lista', getTecnicas);
+
 }
 
 // Exporta a configuração de rotas como padrão

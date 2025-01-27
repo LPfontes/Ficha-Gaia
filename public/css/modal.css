@@ -1,0 +1,167 @@
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+.tabs {
+      display: flex;
+      background-color: #3B2849;
+      border-radius: 20px;
+}
+
+.tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+}
+.tab-icon{
+  width: 5rem;
+}
+.tab.active {
+      background-color: #e6dbf5;
+      color: #000;
+      font-weight: bold;
+      border-bottom: 2px solid #6a1b9a;
+}
+.modal-content {
+    background-color: #00000000;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 65%;
+    max-height: 95%;
+}
+.modal-content p{
+    color: #04c4a7;
+    font-size: 25px;
+    background: #351c34cc;
+}
+ 
+  
+.habilidade-container{
+    display: grid;
+    justify-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #2f0a3a;
+    border: 2px solid #3B2849;
+    border-radius: 20px;
+}
+.close {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.habilidade-header{
+  padding: 10px;
+  border-bottom: 1px solid #3B2849;
+  margin-bottom: 5px;
+}
+
+.habilidade-descricao{
+    padding-top: 20px;
+
+}
+
+.habilidade-info div{
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    color: #02F6D0;
+}
+.habilidade-efeito{
+    display: flex;
+    border-bottom: 1px solid #3B2849;
+    padding: 10px;
+}
+.modal-content-habilidade{
+  gap: 5px;
+  margin: 5px;
+  max-height: 800px;
+  overflow-y: auto;
+  text-align: center;
+}
+.modal-content-habilidade h2{
+  color: #9056b9;
+}
+.modal-content-habilidade h4{
+  font-size: 16px;
+  color: #02F6D0;
+}
+.modal-content-habilidade strong{
+  text-align: center;
+  font-size: 18px;
+  color: #02F6D0;
+}
+.modal-content-habilidade p{
+    background: none;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+}
+
+.modal-content-habilidade em{
+    padding: 5px;
+    color: #dfdddd;
+}
+.habilidade-aprimoramento{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.habilidade-item h4{
+    font-size: 18px;
+    color: white;
+}
+.habilidade-detalhes {
+  display: flex;
+  border-bottom: 1px solid #3B2849;
+}
+
+.modal-tecnica{
+  width: 60rem;
+  margin: 10px;
+  padding: 10px;
+  background-color: #23182b;
+  border: 5px solid #3B2849;
+  border-radius: 20px;
+  transform: translate3d(-50px, -15px, 0px);
+}
+.menu-item{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.menu-item button:hover {
+  background-color: #2f0a3a; /* Green */
+  color: white;
+
+}
+.btn-tecnica{
+    background-color: rgba(90, 89, 89, 0.521);
+    color: #02F6D0;
+    border: 2px solid #272b29; 
+    border-radius: 20px;
+}
+.tecnica-info{
+  display: grid;
+  justify-items: center;
+
+}

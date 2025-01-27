@@ -11,6 +11,7 @@ const stateAtributos = {
     valorAnteriorVelocidade: 0,
     valorAnteriorBloqueio: 0,
     valorAnteriorArmadura: 0,
+    valorExaustao: 0
 };
 
 // Função para adicionar opções (0 a 6) a um elemento `<select>` pelo seu ID
@@ -32,7 +33,25 @@ var selects = document.querySelectorAll(".selects select");
 selects.forEach(function(select) {
     adicionarOpcoes(select.id);
 });
-
+function AtualizarTeste(id, valor,reducao) {
+    var span = document.getElementById(`teste-${id}`);
+        span.textContent = parseInt(valor) - reducao;
+        if(id === 'agilidade'){
+            document.getElementById('desvio').value = span.textContent;
+        }
+}
+selects.forEach(elemento => {
+    elemento.addEventListener('change', function() {
+        if(this.id === 'exaustao'){}else{AtualizarTeste(this.id, this.value,stateAtributos.valorExaustao);}
+        
+    });
+});
+document.getElementById('exaustao').addEventListener('change', function() {
+    stateAtributos.valorExaustao = parseInt(this.value);
+    selects.forEach(elemento => {
+        if(elemento.id === 'exaustao'){}else{AtualizarTeste(elemento.id, elemento.value,stateAtributos.valorExaustao);}
+    });
+});
 // Atualiza `pv_max` e opções de `armadura` ao mudar o valor do campo `vigor`
 document.getElementById('vigor').addEventListener('change', function() {
     // Obtém os valores atual e selecionado
@@ -46,35 +65,7 @@ document.getElementById('vigor').addEventListener('change', function() {
         document.getElementById('pv_max').value = value + (selectValor - stateAtributos.valorAnteriorPv);
     }
 
-    // Atualiza as opções disponíveis no `<select>` de `armadura`
-    let select = document.getElementById("armadura");
-    switch (selectValor) {
-        case 0:
-            select.innerHTML = `<option value="0">Nenhuma</option>`;
-            break;
-        case 1:
-            select.innerHTML = `<option value="0">Nenhuma</option>
-                                <option value="1">Leve</option>`;
-            break;
-        case 2:
-            select.innerHTML = `<option value="0">Nenhuma</option>
-                                <option value="1">Leve</option>
-                                <option value="2">Média</option>`;
-            break;
-        case 3:
-            select.innerHTML = `<option value="0">Nenhuma</option>
-                                <option value="1">Leve</option>
-                                <option value="2">Média</option>`;
-            break;
-        case 4:
-        case 5:
-        case 6:
-            select.innerHTML = `<option value="0">Nenhuma</option>
-                                <option value="1">Leve</option>
-                                <option value="2">Média</option>
-                                <option value="3">Pesada</option>`;
-            break;
-    }
+    
 
     // Atualiza o valor anterior de `pv`
     stateAtributos.valorAnteriorPv = selectValor;
@@ -83,7 +74,7 @@ document.getElementById('vigor').addEventListener('change', function() {
 // Atualiza `desvio` e `velocidade` ao mudar o valor do campo `agilidade`
 document.getElementById('agilidade').addEventListener('change', function() {
     selectValor = parseInt(this.value);
-    document.getElementById('desvio').value = selectValor;
+    
 
     // Ajusta `velocidade` com base na diferença entre o valor atual e o valor anterior
     if (stateAtributos.valorAnteriorVelocidade > selectValor) {
@@ -134,11 +125,11 @@ function calcularBloqueio(bloqueio, valor, valorArmadura) {
 document.getElementById('armadura').addEventListener('change', function() {
     selectValor = parseInt(this.value);
     if (stateAtributos.valorAnteriorArmadura > selectValor) {
-        calcularBloqueio(parseInt(bloqueio.value), 0, stateAtributos.valorAnteriorArmadura - selectValor);
+        bloqueio.value = calcularBloqueio(parseInt(bloqueio.value), 0, stateAtributos.valorAnteriorArmadura - selectValor);
     } else {
         bloqueio.value = calcularBloqueio(parseInt(bloqueio.value), parseInt(selectValor), stateAtributos.valorAnteriorArmadura);
     }
-
+    
     // Atualiza o valor anterior de `armadura`
     stateAtributos.valorAnteriorArmadura = selectValor;
 });

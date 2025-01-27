@@ -1,0 +1,57 @@
+.coluna-info{
+    display: grid; grid-template-columns: 1fr;
+}
+.button-section{   
+    margin: 5px;
+    padding: 20px;
+}
+.health-section h2 {
+    color: #df1e1e;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #3B2849;
+    padding-bottom: 8px;
+}
+.health-section label{
+    color: #df0303;
+}
+.coluna-health,.coluna-energy{
+    display: grid;
+    justify-content: center;
+    
+}
+.health-atual,.energy-atual{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.energy-section h2 {
+    color: #6695f8da;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #3B2849;
+    padding-bottom: 8px;
+}
+.energy-section label{
+    color: #6695f8da;
+}
+.coluna-defense{
+    gap: 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,1fr)
+   
+}
+.campo-atributo {
+    width: 110px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.selects,.attributes{
+    display: flex;
+    justify-content: center;
+}

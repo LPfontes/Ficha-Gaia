@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+
 const Propriedade = require('../models/Propriedade'); // Caminho para o modelo base
 
 async function getPropiedade (req, res) {

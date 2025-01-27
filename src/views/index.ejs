@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha de Personagem - Gaia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/content1.css">
+    <link rel="stylesheet" href="/css/content2.css">
+    <link rel="stylesheet" href="/css/content3.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    
+    
 </head>
 <body>
     <div class="mainContainer">
@@ -110,13 +117,14 @@
                 </div> 
             </div> 
             <div class="content1-coluna3">
+                <h2>Parâmetros</h2>
                 <div class="attributes">
                     <div class="selects">
                         <div class="coluna">
                             <label for="precisao">Precisão</label>
                             <div class="campo-atributo">
                                 <select id="precisao" name="precisao"></select>
-                                <span id="teste-precisao">0</span>
+                                <span id="teste-precisao" name="teste-precisao">0</span>
                             </div>
                 
                             <label for="brutalidade">Brutalidade</label>
@@ -348,9 +356,11 @@
                                         <div class="equipment">
                                             <div class="campo">
                                                 <label for="armadura">Armadura</label>
-                                                <select id="armadura" name="armadura">
+                                                <select id="armadura" name="armadura"> 
                                                     <option value="0">Nenhuma</option>
-                                                    
+                                                    <option value="1">Leve</option>
+                                                    <option value="2">Média</option>
+                                                    <option value="3">Pesada</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -487,20 +497,21 @@
                 <div id="habilidades-legado" class="habilidades-legado">
                     <div class="campo">
                         <label for="habilidade1">Habilidade 1</label>
-                        
                     </div>
                     <div class="campo">
                         <label for="habilidade2">Habilidade 2</label>
-                        
                     </div>
                     <div class="campo">
-                        <label for="habilidade3">Habilidade 3</label>
-                        
+                        <label for="habilidade3">Habilidade 3</label>  
                     </div>
                 </div>
-
             </div>
-            
+            <div class="container-habilidade">
+                <div class="button-section">
+                    <button type="submit" onclick="modalHabilidades() "class="submit-btn">Adicionar habilidade</button>
+                </div>
+                
+            </div>
         </div>
         <div class="content4">
 
@@ -508,10 +519,42 @@
         <div class="button-section">
             <button type="submit" class="submit-btn">Salvar</button>
         </div>
+        <div class="modal" id="modal-habilidades">
+            <div class="modal-content">
+            <div class="tabs">
+                <div class="tab" onclick="showTab('Andarilho')">
+                    <img src="img/andarilho.webp" alt="Andarilho" class="tab-icon">
+                    <h3>Andarilho</h3>
+                </div>
+                <div class="tab" onclick="showTab('Combatente')">
+                    <img src="img/combatente.webp" alt="Combatente" class="tab-icon">
+                    <h3>Combatente</h3>
+                </div>
+                <div class="tab" onclick="showTab('Devoto')">
+                    <img src="img/devoto.webp" alt="Devoto" class="tab-icon">
+                    <h3>Devoto</h3>
+                </div>
+                <div class="tab" onclick="showTab('Feiticeiro')">
+                    <img src="img/feiticeiro.webp" alt="Feiticeiro" class="tab-icon">
+                    <h3>Feiticeiro</h3>
+                </div>
+                <div class="tab" onclick="showTab('Ladino')">
+                    <img src="img/ladino.webp" alt="Ladino" class="tab-icon">
+                    <h3>Ladino</h3>
+                </div>
+              <button class="close-button">Fechar</button>
+            </div>
+            
+          </div>    
+        </div>
     </div>
+
     <script src="legados.js"></script>
     <script src="atributos.js"></script>
     <script src="armamentos.js"></script>
-    
+    <script src="habilidades.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

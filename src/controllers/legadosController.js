@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+
 const legado = require('../models/legado'); // Caminho para o modelo base
 
 async function getLegado (req, res) {

@@ -4,7 +4,7 @@ async function legados(select) {
     var fragment = document.createDocumentFragment(); 
     var option = document.createElement("option");
     option.value = "";
-    option.textContent = "Selecione um legado";
+    option.textContent = "Legado";
     fragment.appendChild(option);
     try {
         // Faz a requisição para o endpoint /legados

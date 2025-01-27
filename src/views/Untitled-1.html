@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal com Abas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .modal {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #f5f0fa;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .tab.active {
+      background-color: #e6dbf5;
+      color: #000;
+      font-weight: bold;
+      border-bottom: 2px solid #6a1b9a;
+    }
+
+    .content {
+      padding: 15px;
+      background-color: #fdf8ff;
+    }
+
+    .content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .content li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="modal">
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(event, 'andarilho')">Andarilho</div>
+      <div class="tab" onclick="showTab(event, 'combatente')">Combatente</div>
+      <div class="tab" onclick="showTab(event, 'devoto')">Devoto</div>
+      <div class="tab" onclick="showTab(event, 'feiticeiro')">Feiticeiro</div>
+      <div class="tab" onclick="showTab(event, 'ladino')">Ladino</div>
+    </div>
+    <div class="content" id="andarilho">
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+    <div class="content" id="combatente" style="display: none;">
+      <ul>
+        <li>Combatente item</li>
+        <li>Combatente item</li>
+        <li>Combatente item</li>
+      </ul>
+    </div>
+    <div class="content" id="devoto" style="display: none;">
+      <ul>
+        <li>Devoto item</li>
+        <li>Devoto item</li>
+        <li>Devoto item</li>
+      </ul>
+    </div>
+    <div class="content" id="feiticeiro" style="display: none;">
+      <ul>
+        <li>Feiticeiro item</li>
+        <li>Feiticeiro item</li>
+        <li>Feiticeiro item</li>
+      </ul>
+    </div>
+    <div class="content" id="ladino" style="display: none;">
+      <ul>
+        <li>Ladino item</li>
+        <li>Ladino item</li>
+        <li>Ladino item</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showTab(event, tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.style.display = 'none');
+
+      event.target.classList.add('active');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
